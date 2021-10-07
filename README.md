@@ -1,5 +1,5 @@
-TompiDev GRUB 2 Theme Changer
-=============================
+TompiDev GRUB 2 Theme Installer
+===============================
 
 🚀 Installation
 ---------------
