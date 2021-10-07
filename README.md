@@ -4,24 +4,29 @@
 
 #### Direct download method
 
-Simply download the latest release from the [right side](https://github.com/tompidev/td-linux-grub-themes/releases). 👉
+Simply download the latest release from the [right side](https://github.com/tompidev/td-linux-grub2-theme-installer/releases). 👉
 
 #### Using terminal enter the following command :
 
 ```bash
-$ git clone https://github.com/tompidev/td-linux-grub-themes
-$ cd td-linux-grub-themes
+$ git clone https://github.com/tompidev/td-linux-grub2-theme-installer
+$ cd td-linux-grub2-theme-installer
 $ sudo ./install.sh
 ```
 
 In case git clone the package will be downloaded to the Home folder on your PC.
 
-**After download/clone you need to unzip the package first!**
+**After normal download you need to unzip the package first!**
 
 Next, go to the extracted folder, and then:
 
 1. right click anywhere an empty space
 2. Choose 'Open Terminal here' (or something similar)
+3. Enter the following command:
+
+```bash
+$ sudo ./install.sh
+```
 
 ### 💻 Dependencies
 
