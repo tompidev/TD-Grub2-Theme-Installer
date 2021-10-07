@@ -1,6 +1,6 @@
 # TompiDev GRUB 2 Theme Installer
 
-🚀 Installation
+### 🚀 Installation
 
 Simply download the latest release from the [right side](https://github.com/tompidev/td-linux-grub-themes/releases). 👉
 
@@ -19,7 +19,7 @@ $ cd td-linux-grub-themes
 $ sudo ./install.sh
 ```
 
-💻 Dependencies
+### 💻 Dependencies
 
 **TompiDev GRUB 2 Theme Installer** requires the following dependencies:
 
@@ -79,7 +79,7 @@ Do you want to delete an old Theme?
 
 Just go to the Themes directory inside the "TD Bootloader Themes" folder and delete the whole folder of the not desired Theme.
 
-### ⚙️ How it works?
+### ⚙️ How the script works?
 
 The script reads the folder names of the whole Themes directory and creates a list from it.
 
