@@ -2,6 +2,8 @@
 
 ### 🚀 Installation
 
+#### Direct download method
+
 Simply download the latest release from the [right side](https://github.com/tompidev/td-linux-grub-themes/releases). 👉
 
 Open your download directory, and then:
@@ -9,9 +11,7 @@ Open your download directory, and then:
 1. right click anywhere an empty space
 2. Choose 'Open Terminal here' (or something similar)
 
-In terminal enter following command :
-
-Using terminal enter following command :
+#### Using terminal enter the following command :
 
 ```bash
 $ git clone https://github.com/tompidev/td-linux-grub-themes
@@ -21,7 +21,7 @@ $ sudo ./install.sh
 
 ### 💻 Dependencies
 
-**TompiDev GRUB 2 Theme Installer** requires the following dependencies:
+**TompiDev GRUB 2 Theme Installer** requires the following dependencies (in case git clone):
 
 - git
 
@@ -97,7 +97,7 @@ The rest of the work is done by the script.
 
 📜 License
 
-Copyrights (c) 2021 &quot;TompiDev&quot; &lt;support@tompidev.com&gt;
+Copyright (c) 2021 &quot;TompiDev&quot; &lt;support@tompidev.com&gt;
 
 [![License](https://img.shields.io/badge/Licence-MIT-green.svg)](LICENSE)
 Distributed under the MIT license.
