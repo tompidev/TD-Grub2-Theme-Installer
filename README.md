@@ -59,7 +59,7 @@ Set vim as git default editor
 $ git config --global core.editor 'vim'
 ```
 
-## ⬇️ How to add Themes to the directory
+⬇️ ## How to add Themes to the directory
 
 Do you want to set more Themes?
 
@@ -73,13 +73,13 @@ I show you how can you do this.
 - Now follow the steps of the Installation process
   
 
-## 🗑️: How to remove Themes from the Directory
+🗑️: ## How to remove Themes from the Directory
 
 Do you want to delete an old Theme?
 
 Just go to the Themes directory inside the "TD Bootloader Themes" folder and delete the whole folder of the not desired Theme.
 
-## ⚙️: How it works?
+⚙️: ## How it works?
 
 The script reads the folder names of the whole Themes directory and creates a list from it.
 
