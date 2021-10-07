@@ -85,7 +85,7 @@ I show you how can you do this.
 
 Do you want to delete an old Theme?
 
-Just go to the Themes directory inside the "TD Bootloader Themes" folder and delete the whole folder of the not desired Theme.
+Just go to the Themes directory inside the "td-linux-grub2-theme-installer" folder and delete the whole folder of the not desired Theme.
 
 ### ⚙️ How the script works?
 
