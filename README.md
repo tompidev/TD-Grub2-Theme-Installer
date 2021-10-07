@@ -1,10 +1,8 @@
 TompiDev GRUB 2 Theme Installer
-===============================
 
 🚀 Installation
----------------
 
-Simply download the latest release from the [right side](https://github.com/tompidev/td-linux-grub-themes/releases). 👉
+Simply download the latest release from the [right side](https://github.com/tompidev/td-linux-grub-themes/releases). :point_tight:
 
 Open your download directory, and then:
 
@@ -22,9 +20,8 @@ $ sudo ./install.sh
 ```
 
 💻 Dependencies
----------------
 
-**TompiDev GRUB 2 Theme Changer** requires the following dependencies:
+**TompiDev GRUB 2 Theme Installer** requires the following dependencies:
 
 - git
 
@@ -62,8 +59,43 @@ Set vim as git default editor
 $ git config --global core.editor 'vim'
 ```
 
+## :arrow_down: How to add Themes to the directory
+
+Do you want to set more Themes?
+
+I show you how can you do this.
+
+- First download the desired theme to your PC. 
+  Downloads library you find here: [GRUB Themes - KDE Store](https://store.kde.org/browse?cat=109&ord=latest) or here [GRUB Themes - Gnome-look.org](https://www.gnome-look.org/browse?cat=109&ord=latest)
+  
+- Unzip the downloaded file and copy this unzipped folder into the Themes directory inside the "TD Bootloader Themes" folder.
+  
+- Now follow the steps of the Installation process
+  
+
+## :wastebasket: How to remove Themes from the Directory
+
+Do you want to delete an old Theme?
+
+Just go to the Themes directory inside the "TD Bootloader Themes" folder and delete the whole folder of the not desired Theme.
+
+## :gear: How it works?
+
+The script reads the folder names of the whole Themes directory and creates a list from it.
+
+If you delete a folder it will be no more shown on the list.
+
+If you added a new Theme folder the script will see and display it in the list.
+
+When you run the script, you get this numbered list.
+
+Enter the desired template number from the list and press Enter.
+
+The rest of the work is done by the script.
+
+---
+
 📜 License
-----------
 
 Copyrights (c) 2021 &quot;TompiDev&quot; &lt;support@tompidev.com&gt;
 
