@@ -1,8 +1,8 @@
-TompiDev GRUB 2 Theme Installer
+# TompiDev GRUB 2 Theme Installer
 
 🚀 Installation
 
-Simply download the latest release from the [right side](https://github.com/tompidev/td-linux-grub-themes/releases). :point_tight:
+Simply download the latest release from the [right side](https://github.com/tompidev/td-linux-grub-themes/releases). 👉
 
 Open your download directory, and then:
 
@@ -59,7 +59,7 @@ Set vim as git default editor
 $ git config --global core.editor 'vim'
 ```
 
-## :arrow_down: How to add Themes to the directory
+## ⬇️ How to add Themes to the directory
 
 Do you want to set more Themes?
 
@@ -73,13 +73,13 @@ I show you how can you do this.
 - Now follow the steps of the Installation process
   
 
-## :wastebasket: How to remove Themes from the Directory
+## 🗑️: How to remove Themes from the Directory
 
 Do you want to delete an old Theme?
 
 Just go to the Themes directory inside the "TD Bootloader Themes" folder and delete the whole folder of the not desired Theme.
 
-## :gear: How it works?
+## ⚙️: How it works?
 
 The script reads the folder names of the whole Themes directory and creates a list from it.
 
