@@ -6,16 +6,6 @@
 
 Simply download the latest release from the [right side](https://github.com/tompidev/td-linux-grub2-theme-installer/releases). 👉
 
-#### Using terminal enter the following command :
-
-```bash
-$ git clone https://github.com/tompidev/td-linux-grub2-theme-installer
-$ cd td-linux-grub2-theme-installer
-$ sudo ./install.sh
-```
-
-In case git clone the package will be downloaded to the Home folder on your PC.
-
 **After normal download you need to unzip the package first!**
 
 Next, go to the extracted folder, and then:
@@ -27,6 +17,16 @@ Next, go to the extracted folder, and then:
 ```bash
 $ sudo ./install.sh
 ```
+
+#### Using terminal enter the following command :
+
+```bash
+$ git clone https://github.com/tompidev/td-linux-grub2-theme-installer
+$ cd td-linux-grub2-theme-installer
+$ sudo ./install.sh
+```
+
+In case git clone the package will be downloaded to the Home folder on your PC.
 
 ### 💻 Dependencies
 
