@@ -4,7 +4,7 @@
 
 #### Direct download method
 
-Simply download the latest release from the [right side](https://github.com/tompidev/td-linux-grub2-theme-installer/releases). 👉
+Simply download the latest release from the [right side](https://github.com/tompidev/TD-Grub2-Theme-Installer/releases). 👉
 
 **After normal download you need to unzip the package first!**
 
@@ -21,8 +21,8 @@ $ sudo ./install.sh
 #### Using terminal enter the following command :
 
 ```bash
-$ git clone https://github.com/tompidev/td-linux-grub2-theme-installer
-$ cd td-linux-grub2-theme-installer
+$ git clone https://github.com/tompidev/TD-Grub2-Theme-Installer
+$ cd TD-Grub2-Theme-Installer
 $ sudo ./install.sh
 ```
 
@@ -77,7 +77,9 @@ I show you how can you do this.
 - First download the desired theme to your PC. 
   Downloads library you find here: [GRUB Themes - KDE Store](https://store.kde.org/browse?cat=109&ord=latest) or here [GRUB Themes - Gnome-look.org](https://www.gnome-look.org/browse?cat=109&ord=latest)
 
-- Unzip the downloaded file and copy this unzipped folder into the Themes directory inside the "TD Bootloader Themes" folder.
+- Unzip the downloaded file and copy this unzipped folder into the Themes directory inside the "TD-Grub2-Theme-Installer" folder.
+
+  (Look at the correct directory structure inside the themes folder)
 
 - Now follow the steps of the Installation process
 
@@ -85,7 +87,7 @@ I show you how can you do this.
 
 Do you want to delete an old Theme?
 
-Just go to the Themes directory inside the "td-linux-grub2-theme-installer" folder and delete the whole folder of the not desired Theme.
+Just go to the Themes directory inside the "TD-Grub2-Theme-Installer" folder and delete the whole folder of the not desired Theme.
 
 ### ⚙️ How the script works?
 
