@@ -36,7 +36,56 @@ function check_root() {
     fi
 }
 
-function selected_theme(){
+function select_language() {
+
+    PS3=$(echo_prompt "\nYour language: ")
+    select i in English Deutsch Magyar; do
+        case $i in
+            'English')
+                echo_prompt '\nYou selected English Language'
+                themes_found="\nI found  the following template(s) in the themes directory:"
+                theme_number="\nPlease Enter the number of the theme you want to install: "
+                interrupted="\nRunning was interrupted by User. Abort run..."
+                wrong_selected="\nNone or non-existent theme selected. Abort run..."
+                installing_theme="Installing selected theme..."
+                enabling_grub="Enabling grub menu"
+                grub_timeout="Setting grub timeout to 10 seconds"
+                setting_default="Set the selected theme as default"
+                updating_grub="Updating grub config..."
+                all_done="All done !"
+                break;;
+            'Deutsch')
+                echo_prompt '\nDu hast Deutsche sprache gewählt'
+                themes_found="\nIch habe die folgende(n) Vorlage(n) im Themenverzeichnis gefunden:"
+                theme_number="\nBitte gebe die Nummer des Themes ein, das du installieren möchtest: "
+                interrupted="\nDer Lauf wurde vom Benutzer unterbrochen. Lauf abbrechen..."
+                wrong_selected="\nKein oder nicht vorhandenes Theme ausgewählt. Lauf abbrechen..."
+                installing_theme="Ausgewähltes Thema installieren..."
+                enabling_grub="Grub-Menü aktivieren"
+                grub_timeout="Grub-Timeout auf 10 Sekunden setzen"
+                setting_default="Das ausgewählte Thema als Standard festlegen"
+                updating_grub="Grub-Konfiguration wird aktualisiert..."
+                all_done="Alles erlädigt !"
+                break;;
+            'Magyar')
+                echo_prompt '\nA magyar nyelvet választottad'
+                themes_found="\nAz alábbi sablonokat találtam a themes könyvtárban:"
+                theme_number="\nKérlek add meg a sablon számát, amelyiket telepíteni szeretnéd: "
+                interrupted="\nA felhasználó megszakította a futtatást. Futtatás megszakítása..."
+                wrong_selected="\nNem létező sablon, vagy semmi sem lett kiválasztva. Futtatás megszakítása..."
+                installing_theme="A kiválasztott sablon telepítése..."
+                enabling_grub="Grub menü engedélyezése"
+                grub_timeout="A grub timeout beállítása 10 másodpercre"
+                setting_default="A kiválasztott sablon beállítása alapértelmezettként"
+                updating_grub="A grub konfiguráció frissítése ..."
+                all_done="Minden kész !"
+                break;;
+        esac
+    done
+}
+
+function select_theme() {
+
     cd ./themes
     declare -a dirs
         i=1
@@ -45,25 +94,35 @@ function selected_theme(){
             dirs[i++]="${d%/}"
         done
 
-    echo_info "\nI found  ${#dirs[@]} template(s) in the themes directory."
-    
+    echo_warning "${themes_found}"
+
+    echo "0 | Abort run program"
     for((i=1;i<=${#dirs[@]};i++))
         do
             echo $i "| ${dirs[i]}"
         done
 
-    echo_prompt "\nPlease Enter the number of the theme you want to install: "
-    
+    echo_prompt "${theme_number}"
+
     read i
 
     THEME_NAME="${dirs[$i]}"
 
-    #echo_primary "\nYou selected ${THEME_NAME} "
+    if [[ i -le 0 ]]; then
+        echo_warning "${interrupted}"
+        exit 1
+    fi
 
 }
 
-THEME_NAME="$(selected_theme)"
-    #echo_primary "${THEME_NAME}"
+function selected_theme() {
+    # Check if valid theme nummer selected
+    if [[ ! -e "${THEME_NAME}" ]]; then
+        echo_error '${wrong_selected}'
+        
+        exit 1
+    fi
+}
 
 function backup() {
     # Backup grub config
@@ -75,7 +134,7 @@ function install_theme() {
     # create themes directory if not exists
     if [[ ! -d "${THEME_DIR}/${THEME_NAME}" ]]; then
         # Copy theme
-        echo_primary "Installing ${THEME_NAME} theme..."
+        echo_primary "${installing_theme}"
 
         echo_info "mkdir -p \"${THEME_DIR}/${THEME_NAME}\""
         mkdir -p "${THEME_DIR}/${THEME_NAME}"
@@ -86,7 +145,7 @@ function install_theme() {
 }
 
 function config_grub() {
-    echo_primary 'Enabling grub menu'
+    echo_primary "${enabling_grub}"
     # remove default grub style if any
     echo_info "sed -i '/GRUB_TIMEOUT_STYLE=/d' /etc/default/grub"
     sed -i '/GRUB_TIMEOUT_STYLE=/d' /etc/default/grub
@@ -96,7 +155,7 @@ function config_grub() {
 
     #--------------------------------------------------
 
-    echo_primary 'Setting grub timeout to 10 seconds'
+    echo_primary "${grub_timeout}"
     # remove default timeout if any
     echo_info "sed -i '/GRUB_TIMEOUT=/d' /etc/default/grub"
     sed -i '/GRUB_TIMEOUT=/d' /etc/default/grub
@@ -106,7 +165,7 @@ function config_grub() {
 
     #--------------------------------------------------
 
-    echo_primary "Setting ${THEME_NAME} as default"
+    echo_primary "${setting_default}"
     # remove theme if any
     echo_info "sed -i '/GRUB_THEME=/d' /etc/default/grub"
     sed -i '/GRUB_THEME=/d' /etc/default/grub
@@ -117,7 +176,7 @@ function config_grub() {
 
 function update_grub() {
     # Update grub config
-    echo_primary 'Updating grub config...'
+    echo_primary "${updating_grub}"
     if [[ -x "$(command -v update-grub)" ]]; then
         echo_info 'update-grub'
         update-grub
@@ -139,9 +198,14 @@ function update_grub() {
 }
 
 function main() {
-    splash 'ChrisTechTips Grub2 Theme Installer'
+    splash 'TD Grub2 Theme Installer'
 
-    check_root
+    #check_root
+
+    select_language
+
+    select_theme
+
     selected_theme
 
     install_theme
@@ -149,7 +213,7 @@ function main() {
     config_grub
     update_grub
 
-    echo_success 'All done !'
+    echo_success "${all_done}"
 }
 
 main

@@ -13,6 +13,7 @@ $ git clone https://github.com/tompidev/td-linux-grub-themes
 $ cd td-linux-grub-themes
 $ sudo ./install.sh
 ```
+
 In case git clone the package will be downloaded to the Home folder on your PC.
 
 **After download/clone you need to unzip the package first!**
@@ -70,11 +71,10 @@ I show you how can you do this.
 
 - First download the desired theme to your PC. 
   Downloads library you find here: [GRUB Themes - KDE Store](https://store.kde.org/browse?cat=109&ord=latest) or here [GRUB Themes - Gnome-look.org](https://www.gnome-look.org/browse?cat=109&ord=latest)
-  
+
 - Unzip the downloaded file and copy this unzipped folder into the Themes directory inside the "TD Bootloader Themes" folder.
-  
+
 - Now follow the steps of the Installation process
-  
 
 ### 🗑️ How to remove Themes from the Directory
 
@@ -95,6 +95,14 @@ When you run the script, you get this numbered list.
 Enter the desired template number from the list and press Enter.
 
 The rest of the work is done by the script.
+
+### :globe_with_meridians:  Languages
+
+* English
+
+* German
+
+* Hungarian
 
 ---
 
