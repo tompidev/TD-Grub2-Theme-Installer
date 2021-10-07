@@ -6,11 +6,6 @@
 
 Simply download the latest release from the [right side](https://github.com/tompidev/td-linux-grub-themes/releases). 👉
 
-Open your download directory, and then:
-
-1. right click anywhere an empty space
-2. Choose 'Open Terminal here' (or something similar)
-
 #### Using terminal enter the following command :
 
 ```bash
@@ -18,6 +13,14 @@ $ git clone https://github.com/tompidev/td-linux-grub-themes
 $ cd td-linux-grub-themes
 $ sudo ./install.sh
 ```
+In case git clone the package will be downloaded to the Home folder on your PC.
+
+**After download/clone you need to unzip the package first!**
+
+Next, go to the extracted folder, and then:
+
+1. right click anywhere an empty space
+2. Choose 'Open Terminal here' (or something similar)
 
 ### 💻 Dependencies
 
@@ -95,7 +98,7 @@ The rest of the work is done by the script.
 
 ---
 
-📜 License
+### 📜 License
 
 Copyright (c) 2021 &quot;TompiDev&quot; &lt;support@tompidev.com&gt;
 
@@ -104,4 +107,4 @@ Distributed under the MIT license.
 
 Thank you for your rating or star voting!
 
-If you have any idee or a question please don not hesitate and write!
+If you have any idea or a question please don not hesitate just write me!
