@@ -97,7 +97,7 @@ If you added a new Theme folder the script will see and display it in the list.
 
 When you run the script, you get this numbered list.
 
-Enter the desired template number from the list and press Enter.
+You need only Enter the desired template number from the list and press Enter.
 
 The rest of the work is done by the script.
 
