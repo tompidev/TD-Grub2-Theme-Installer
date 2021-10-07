@@ -4,7 +4,7 @@ TompiDev GRUB 2 Theme Changer
 🚀 Installation
 ---------------
 
-Simply download the latest release from the [right side](https://github.com/tompidev/td-linux-grub-themes/releases).
+Simply download the latest release from the [right side](https://github.com/tompidev/td-linux-grub-themes/releases). 👉
 
 Open your download directory, and then:
 
