@@ -38,12 +38,13 @@ function check_root() {
 
 function select_language() {
 
-    PS3=$(echo_prompt "\nYour language: ")
+    PS3=$(echo_prompt "\nSelect Your language: ")
     select i in English Deutsch Magyar; do
         case $i in
             'English')
                 echo_prompt '\nYou selected English Language'
                 themes_found="\nI found  the following template(s) in the themes directory:"
+                abort_run="Abort program"
                 theme_number="\nPlease Enter the number of the theme you want to install: "
                 interrupted="\nRunning was interrupted by User. Abort run..."
                 wrong_selected="\nNone or non-existent theme selected. Abort run..."
@@ -57,6 +58,7 @@ function select_language() {
             'Deutsch')
                 echo_prompt '\nDu hast Deutsche sprache gewählt'
                 themes_found="\nIch habe die folgende(n) Vorlage(n) im Themenverzeichnis gefunden:"
+                abort_run="Programm abbrechen"
                 theme_number="\nBitte gebe die Nummer des Themes ein, das du installieren möchtest: "
                 interrupted="\nDer Lauf wurde vom Benutzer unterbrochen. Lauf abbrechen..."
                 wrong_selected="\nKein oder nicht vorhandenes Theme ausgewählt. Lauf abbrechen..."
@@ -70,6 +72,7 @@ function select_language() {
             'Magyar')
                 echo_prompt '\nA magyar nyelvet választottad'
                 themes_found="\nAz alábbi sablonokat találtam a themes könyvtárban:"
+                abort_run="Program megszakítása"
                 theme_number="\nKérlek add meg a sablon számát, amelyiket telepíteni szeretnéd: "
                 interrupted="\nA felhasználó megszakította a futtatást. Futtatás megszakítása..."
                 wrong_selected="\nNem létező sablon, vagy semmi sem lett kiválasztva. Futtatás megszakítása..."
@@ -96,7 +99,7 @@ function select_theme() {
 
     echo_warning "${themes_found}"
 
-    echo "0 | Abort run program"
+    echo "0 | ${abort_run}"
     for((i=1;i<=${#dirs[@]};i++))
         do
             echo $i "| ${dirs[i]}"
