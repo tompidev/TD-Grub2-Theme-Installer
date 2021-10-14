@@ -12,7 +12,7 @@ Simply download the latest release from the [right side  👉](https://github.co
 
 ##### Next, go to the extracted folder, and then:
 
-1. right click anywhere an empty space
+1. right click anywhere an empty space (inside the "TD-Grub2-Theme-Installer" directory)
 2. Choose 'Open Terminal here' (or something similar)
 3. Enter the following command:
 
