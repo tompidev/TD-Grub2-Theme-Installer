@@ -1,6 +1,7 @@
 # TompiDev GRUB 2 Theme Installer
 
 [![License](https://img.shields.io/badge/Licence-MIT-green.svg)](LICENSE)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/tompidev/TD-Grub2-Theme-Installer)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/tompidev/TD-Grub2-Theme-Installer?label=Download)
 
 ### 🚀 Installation
