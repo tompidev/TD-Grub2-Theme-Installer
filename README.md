@@ -1,10 +1,13 @@
 # TompiDev GRUB 2 Theme Installer
 
+[![License](https://img.shields.io/badge/Licence-MIT-green.svg)](LICENSE)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/tompidev/TD-Grub2-Theme-Installer?label=Download)
+
 ### 🚀 Installation
 
 #### Direct download method
 
-Simply download the latest release from the [right side](https://github.com/tompidev/TD-Grub2-Theme-Installer/releases). 👉
+Simply download the latest release from the [right side  👉](https://github.com/tompidev/TD-Grub2-Theme-Installer/releases/latest)
 
 **After normal download you need to unzip the package first!**
 
@@ -15,15 +18,15 @@ Next, go to the extracted folder, and then:
 3. Enter the following command:
 
 ```bash
-$ sudo ./install.sh
+ sudo ./install.sh
 ```
 
 #### Using terminal enter the following command :
 
 ```bash
-$ git clone https://github.com/tompidev/TD-Grub2-Theme-Installer
-$ cd TD-Grub2-Theme-Installer
-$ sudo ./install.sh
+ git clone https://github.com/tompidev/TD-Grub2-Theme-Installer
+ cd TD-Grub2-Theme-Installer
+ sudo ./install.sh
 ```
 
 In case git clone the package will be downloaded to the Home folder on your PC.
@@ -34,39 +37,12 @@ In case git clone the package will be downloaded to the Home folder on your PC.
 
 - git
 
+##### 🐧 Install git (Linux)
+
+```bash
+ sudo apt-get install --assume-yes git
+```
 ---
-
-### 🔖 git
-
-#### 🐧 Install git (Linux)
-
-```bash
-$ sudo apt-get install --assume-yes git
-```
-
-#### 🏁 Install git (Windows)
-
-Download and install latest version from here [git-scm.com](https://git-scm.com/download/win)
-
-#### 🍎 Install git (OSX)
-
-```bash
-$ brew install git
-```
-
-#### 🔧 git configuration
-
-Push current branch only if upstream exists
-
-```bash
-$ git config --global push.default simple
-```
-
-Set vim as git default editor
-
-```bash
-$ git config --global core.editor 'vim'
-```
 
 ### ⬇️ How to add Themes to the directory
 
@@ -83,11 +59,15 @@ I show you how can you do this.
 
 - Now follow the steps of the Installation process
 
+---
+
 ### 🗑️ How to remove Themes from the Directory
 
 Do you want to delete an old Theme?
 
 Just go to the Themes directory inside the "TD-Grub2-Theme-Installer" folder and delete the whole folder of the not desired Theme.
+
+---
 
 ### ⚙️ How the script works?
 
@@ -103,6 +83,8 @@ You need only Enter the desired template number from the list and press Enter.
 
 The rest of the work is done by the script.
 
+---
+
 ### :globe_with_meridians:  Languages
 
 * English
@@ -113,11 +95,21 @@ The rest of the work is done by the script.
 
 ---
 
+### 🔄 Compatibility
+
+The script has been tested on the following Distros:
+
+* Linux Mint 20
+* Ubuntu 20.04/21.04
+* Kubuntu 20.04/21.04
+* KDE Neon
+
+---
+
 ### 📜 License
 
 Copyright (c) 2021 &quot;TompiDev&quot; &lt;support@tompidev.com&gt;
 
-[![License](https://img.shields.io/badge/Licence-MIT-green.svg)](LICENSE)
 Distributed under the MIT license.
 
 Thank you for your rating or star voting!
