@@ -56,7 +56,7 @@ I show you how can you do this.
 
   (Look at the correct directory structure inside the themes folder)
 
-- Now follow the steps of the [Installation process](#Next, go to the extracted folder, and then:)
+- Now follow the steps of the [Installation process](#next-go-to-the-extracted-folder-and-then)
 
 ---
 
