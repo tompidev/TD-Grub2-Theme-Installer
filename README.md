@@ -1,12 +1,13 @@
 # TompiDev GRUB 2 Theme Installer
 
 [![License](https://img.shields.io/badge/Licence-MIT-green.svg)](LICENSE)
+[![Latest](https://img.shields.io/badge/Download-latest-blue)](https://github.com/tompidev/TD-Grub2-Theme-Installer/releases/latest)
 
 ### 🚀 Installation
 
 #### Direct download method
 
-Simply download the latest release from the [right side  👉](https://github.com/tompidev/TD-Grub2-Theme-Installer/releases/latest)
+Simply download the latest release from the [right side  👉](https://github.com/tompidev/TD-Grub2-Theme-Installer/releases)
 
 **After normal download you need to unzip the package first!**
 
