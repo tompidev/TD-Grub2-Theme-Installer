@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# install.sh
+# @author Tompidev
+# @description
+# @created 2021-Oct-22 15:05:42
+# @copyright (c) 2021 Tompi Developments
+# @licence MIT
+# @last-modified 2021-Oct-25 06:52:48
+# @release v1.0.2
+
+
 THEME_DIR='/usr/share/grub/themes'
 THEME_NAME=''
 
@@ -12,7 +22,7 @@ function echo_warning() {   echo -ne "\033[0;33m${*}\033[0m\n"; }
 function echo_secondary() { echo -ne "\033[0;34m${*}\033[0m\n"; }
 function echo_info() {      echo -ne "\033[0;35m${*}\033[0m\n"; }
 function echo_primary() {   echo -ne "\033[0;36m${*}\033[0m\n"; }
-function echo_error() {     echo -ne "\033[0;1;31merror:\033[0;31m\t${*}\033[0m\n"; }
+function echo_error() {     echo -ne "\033[0;1;31mError:\033[0;31m\t${*}\033[0m\n"; }
 function echo_label() {     echo -ne "\033[0;1;32m${*}:\033[0m\t"; }
 function echo_prompt() {    echo -ne "\033[0;36m${*}\033[0m "; }
 
@@ -50,7 +60,9 @@ function select_language() {
                 wrong_selected="\nNone or non-existent theme selected. Abort run..."
                 installing_theme="Installing selected theme..."
                 enabling_grub="Enabling grub menu"
-                grub_timeout="Setting grub timeout to 10 seconds"
+                set_timeout="\nPlease enter Grub Timeout in seconds (recommended 3-10 sec): "
+                wrong_timeout="\nThe specified format is incorrect. Only numbers between 1 and 99 are allowed. Abort run..."
+                setting_timeout="Setting grub timeout to given time"
                 setting_default="Set the selected theme as default"
                 updating_grub="Updating grub config..."
                 all_done="All done !"
@@ -64,7 +76,9 @@ function select_language() {
                 wrong_selected="\nKein oder nicht vorhandenes Theme ausgewählt. Lauf abbrechen..."
                 installing_theme="Ausgewähltes Thema installieren..."
                 enabling_grub="Grub-Menü aktivieren"
-                grub_timeout="Grub-Timeout auf 10 Sekunden setzen"
+                set_timeout="\nBitte Grub Timeout in Sekunden eingeben (empfohlen 3-10 Sek):"
+                wrong_timeout="\nDas angegebene Format ist falsch. Es sind nur Zahlen zwischen 1 und 99 erlaubt. Lauf abbrechen..."
+                setting_timeout="Grub-Timeout auf die ausgewählte zeit setzen"
                 setting_default="Das ausgewählte Thema als Standard festlegen"
                 updating_grub="Grub-Konfiguration wird aktualisiert..."
                 all_done="Alles erlädigt !"
@@ -78,7 +92,9 @@ function select_language() {
                 wrong_selected="\nNem létező sablon, vagy semmi sem lett kiválasztva. Futtatás megszakítása..."
                 installing_theme="A kiválasztott sablon telepítése..."
                 enabling_grub="Grub menü engedélyezése"
-                grub_timeout="A grub timeout beállítása 10 másodpercre"
+                set_timeout="\nKérlek add meg a Grub időtúllépést másodpercben (ajánlott 3-10 mp): "
+                wrong_timeout="\nA megadott formátum helytelen. Csak számok 1 és 99 között megengedettek. Futás megszakítása..."
+                setting_timeout="A grub timeout beállítása a választott időre"
                 setting_default="A kiválasztott sablon beállítása alapértelmezettként"
                 updating_grub="A grub konfiguráció frissítése ..."
                 all_done="Minden kész !"
@@ -121,8 +137,32 @@ function select_theme() {
 function selected_theme() {
     # Check if valid theme nummer selected
     if [[ ! -e "${THEME_NAME}" ]]; then
-        echo_error '${wrong_selected}'
-        
+        echo_error "${wrong_selected}"
+
+        exit 1
+    fi
+}
+
+function set_timeout(){
+    # Waiting for user to enter Grub Timeout between 1 and 99
+
+    echo_prompt "${set_timeout}"
+
+    read GRUB_TIMEOUT
+
+    format='^[0-9]{1,2}$'
+
+    if [[ ! $GRUB_TIMEOUT =~ $format ]]; then
+
+        echo_error "${wrong_timeout}"
+
+       exit 1
+    fi
+
+    if [[ $GRUB_TIMEOUT -le 0 ]]; then
+
+        echo_error "${wrong_timeout}"
+
         exit 1
     fi
 }
@@ -158,13 +198,13 @@ function config_grub() {
 
     #--------------------------------------------------
 
-    echo_primary "${grub_timeout}"
+    echo_primary "${setting_timeout}"
     # remove default timeout if any
     echo_info "sed -i '/GRUB_TIMEOUT=/d' /etc/default/grub"
     sed -i '/GRUB_TIMEOUT=/d' /etc/default/grub
 
-    echo_info "echo 'GRUB_TIMEOUT=\"10\"' >> /etc/default/grub"
-    echo 'GRUB_TIMEOUT="10"' >> /etc/default/grub
+    echo_info "echo 'GRUB_TIMEOUT=\""${GRUB_TIMEOUT}"\"' >> /etc/default/grub"
+    echo "GRUB_TIMEOUT=\"${GRUB_TIMEOUT}\"" >> /etc/default/grub
 
     #--------------------------------------------------
 
@@ -203,7 +243,7 @@ function update_grub() {
 function main() {
     splash 'TD Grub2 Theme Installer'
 
-    #check_root
+    check_root
 
     select_language
 
@@ -211,9 +251,12 @@ function main() {
 
     selected_theme
 
+    set_timeout
+
     install_theme
 
     config_grub
+
     update_grub
 
     echo_success "${all_done}"
